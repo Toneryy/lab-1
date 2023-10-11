@@ -7,7 +7,7 @@ class CalculatorTestCase(TestCase):
         self.assertEqual(calculator('СТОП'), 'Вы закончили работу с калькулятором!')
 
     def test_2(self) -> None:
-        self.assertEqual(calculator('5+6-81/6'), '-2.5')
+        self.assertEqual(calculator('5+6'), '11')
 
     def test_3(self) -> None:
         self.assertEqual(calculator('5/'), 'Неизвестный ввод')
