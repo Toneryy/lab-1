@@ -9,6 +9,7 @@ def main():
     choice = choice.replace('ctg', '1/tan')
     choice = choice.replace('tg', 'tan')
     choice = choice.replace(',', '.')
+    choice = choice.replace('стоп', 'СТОП')
     if choice not in ['+', '-', '*', '/', 'sqrt', '**', 'sin', 'cos', 'tan', '1/tan', 'log', 'СТОП']:
         print('Неизвестный ввод')
         return main()
@@ -23,7 +24,7 @@ def main():
                 print(int(math.log(a, b)))
                 return main()
             except ValueError:
-                print('Вы ввели больше 2 чисел, программа будет запущена заново')
+                print('Вы ввели не 2 числа, программа будет запущена заново')
                 return main()
 
 
@@ -51,7 +52,7 @@ def main():
         else:
             try:
                 if choice == 'sqrt':
-                    a = int(input('Введите число из которого будем извлекать корень: '))
+                    a = float(input('Введите число из которого будем извлекать корень: '))
                     return round(math.sqrt(a), 3)
             except ValueError:
                 print('Вы ввели больше 1 числа, либо отрицательное число, программа будет запущена заново')
@@ -59,8 +60,8 @@ def main():
 
             try:
                 if choice == 'sin':
-                    a = int(input('Введите число у которого мы будем искать синус: '))
-                    return int(math.sin(a))
+                    a = float(input('Введите радианы для поиска синуса: '))
+                    return math.sin(math.radians(a))
             except ValueError:
                 print('Вы ввели больше 1 числа, либо операции для данного числа не существует,'
                       ' программа будет запущена заново')
@@ -68,8 +69,8 @@ def main():
 
             try:
                 if choice == 'cos':
-                    a = int(input('Введите число у которого мы будем искать косинус: '))
-                    return round(math.cos(a), 3)
+                    a = float(input('Введите радианы для поиска косинуса: '))
+                    return math.cos(math.radians(a))
             except ValueError:
                 print('Вы ввели больше 1 числа, либо операции для данного числа не существует,'
                       ' программа будет запущена заново')
@@ -77,8 +78,8 @@ def main():
 
             try:
                 if choice == 'tan':
-                    a = int(input('Введите число у которого мы будем искать тангенс: '))
-                    return round(math.tan(a), 3)
+                    a = float(input('Введите радианы для поиска тангенса: '))
+                    return math.tan(math.radians(a))
             except ValueError:
                 print('Вы ввели больше 1 числа, либо операции для данного числа не существует,'
                       ' программа будет запущена заново')
@@ -86,8 +87,8 @@ def main():
 
             try:
                 if choice == '1/tan':
-                    a = int(input('Введите число у которого мы будем искать синус котангенс: '))
-                    return round(1/math.tan(a), 3)
+                    a = float(input('Введите радианы для поиска котангенса: '))
+                    return 1/math.tan(math.radians(a))
             except ValueError:
                 print('Вы ввели больше 1 числа, либо операции для данного числа не существует,'
                       ' программа будет запущена заново')
